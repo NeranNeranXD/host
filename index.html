@@ -48,8 +48,14 @@
         <textarea cols="20" rows="10" id = 'invite'>Я узнал о сервере ...</textarea>
         <br>
         <br>
-        <button id = 'Save'>Сохранить</button>
+        <button id = 'Save' onclick = 'submit'>Сохранить</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        function submit() {
+        var a = document.getElementById('name').value
+        alert(a)
+        }
+    </script>
 </body>
 </html>
