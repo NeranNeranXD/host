@@ -28,36 +28,40 @@
 </head>
 <body bgcolor="#424549" style="font-family:Arial, Helvetica, sans-serif;">
     <h1 style = "color:#99aab5">Анкета участника:</h1>
-    <form id = 'form'>
-        <h2 style = "color:#99aab5">Имя персонажа:</h2>
+    <form method = 'post'>
+<!--        action = 'страница для обработки данных'-->
+         {% csrf_token %}
+        <h2 style = "color:#99aab5">Имя персонажа!:</h2>
         <br>
-        <input type = 'text' class = 'fon' placeholder="Имя" id = 'name'>
+        {{form.name}}
         <br>
         <br>
         <h2 style = "color:#99aab5">Возраст персонажа:</h2>
         <br>
-        <input type = 'text' class = 'fon'  placeholder="Возраст" id = 'age'>
+        {{form.age}}
         <br>
         <br>
         <h2 style = "color:#99aab5">История персонажа:</h2>
         <br>
-        <textarea cols="40" rows="10" class = 'fon'  id = 'history'>История моего персонажа начинается с ...</textarea>
+        {{form.history}}
         <br>
         <br>
         <h2 style = "color:#99aab5">Являетесь ли вы контент мейкером? (можно прикрепить ссылку на канал)</h2>
         <br>
-        <textarea cols="40" rows="10" class = 'fon'  id = 'content'>Нет/Да(+ссылка)</textarea>
+        {{form.content}}
         <br> 
         <br>
         <h2 style = "color:#99aab5">Откуда вы узнали про сервер?</h2>
         <br>
-        <textarea cols="40" rows="10" class = 'fon'  id = 'invite'>Я узнал о сервере ...</textarea>
+        {{form.invite}}
         <br>
         <br>
-        <button id = 'Save'  class = 'fonb'  onclick = 'submit'>Сохранить</button>
+        <span>{{ error }}</span>
+        <button id = 'Save'  class = 'fonb'  type = 'submit'>Сохранить</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
    <script>
+
     //    function submit() {
     //    var a = document.getElementById('name').value
         // console.log(a)
