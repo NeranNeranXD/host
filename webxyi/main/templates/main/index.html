@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Govno</title>
+    <style>
+        .fon {
+            background-color: #1e2124;
+        }
+        .fonb {
+            background-color: #7289da;
+        }
+    /* body {
+<!--    color: var(&#45;&#45;tg-theme-text-color);-->
+<!--    background: var(&#45;&#45;tg-theme-bg-color)-->
+    }
+
+    button {
+<!--    color: var(&#45;&#45;tg-theme-button-color);-->
+<!--    background: var(&#45;&#45;tg-theme-button-text-color)-->
+    }
+
+    button:hover {
+<!--    background: var(&#45;&#45;tg-theme-button-secondary-bg-color)-->
+    } */
+    </style>
+
+</head>
+<body bgcolor="#424549" style="font-family:Arial, Helvetica, sans-serif;">
+    <h1 style = "color:#99aab5">Анкета участника:</h1>
+    <form method = 'post'>
+<!--        action = 'страница для обработки данных'-->
+         {% csrf_token %}
+        <h2 style = "color:#99aab5">Имя персонажа!:</h2>
+        <br>
+        {{form.name}}
+        <br>
+        <br>
+        <h2 style = "color:#99aab5">Возраст персонажа:</h2>
+        <br>
+        {{form.age}}
+        <br>
+        <br>
+        <h2 style = "color:#99aab5">История персонажа:</h2>
+        <br>
+        {{form.history}}
+        <br>
+        <br>
+        <h2 style = "color:#99aab5">Являетесь ли вы контент мейкером? (можно прикрепить ссылку на канал)</h2>
+        <br>
+        {{form.content}}
+        <br> 
+        <br>
+        <h2 style = "color:#99aab5">Откуда вы узнали про сервер?</h2>
+        <br>
+        {{form.invite}}
+        <br>
+        <br>
+        <span>{{ error }}</span>
+        <button id = 'Save'  class = 'fonb'  type = 'submit'>Сохранить</button>
+    </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+   <script>
+
+    //    function submit() {
+    //    var a = document.getElementById('name').value
+        // console.log(a)
+        // }  
+    </script>
+</body>
+</html>
